@@ -25,9 +25,9 @@ namespace MacroMaker
         public MainWindow()
         {
             IoC.Initialize();
-            MainViewModel = IoC.Resolve<IMainViewModel>();
+			MainViewModel = IoC.Resolve<IMainViewModel>();
 
-            InitializeComponent();
+			InitializeComponent();
         }
     }
 }

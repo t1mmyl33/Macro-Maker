@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 
-namespace MacroMaker.Story.Scene.Location
+namespace MacroMaker
 {
     public class CenterImageLocation : ImageLocation
     {

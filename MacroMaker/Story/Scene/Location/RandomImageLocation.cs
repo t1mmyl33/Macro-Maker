@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Xml.Serialization;
 
-namespace MacroMaker.Story.Scene.Location
+namespace MacroMaker
 {
     [Serializable]
     public class RandomImageLocation : ImageLocation

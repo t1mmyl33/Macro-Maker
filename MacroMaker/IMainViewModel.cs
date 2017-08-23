@@ -1,5 +1,4 @@
-﻿using MacroMaker.Story;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +9,7 @@ namespace MacroMaker
 {
     public interface IMainViewModel : IViewModel
     {
-        IStory Story { get; set; }
+		IStoryViewModel StoryViewModel { get; set; }
 
         ICommand New { get; set; }
         ICommand Save { get; set; }

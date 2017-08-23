@@ -14,6 +14,7 @@ namespace MacroMaker
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
             container.Register(Component.For<IMainViewModel>().ImplementedBy<MainViewModel>().LifestyleSingleton());
-        }
+			container.Register(Component.For<IStoryViewModel>().ImplementedBy<StoryViewModel>().LifestyleSingleton());
+		}
     }
 }
