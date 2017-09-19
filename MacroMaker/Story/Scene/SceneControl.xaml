@@ -7,16 +7,37 @@
                 <ControlTemplate TargetType="{x:Type macro:SceneControl}">
                     <ControlTemplate.Resources>
                     </ControlTemplate.Resources>
-                    <Grid DataContext="{Binding SceneViewModel}">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="80"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Row="0" Grid.Column="1">Hello</TextBlock>
-					</Grid>
+					<Border BorderBrush="Gray" BorderThickness="0" Margin="6">
+						<Grid Height="100">
+							<Grid.RowDefinitions>
+								<RowDefinition/>
+								<RowDefinition/>
+								<RowDefinition/>
+								<RowDefinition/>
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="130"/>
+								<ColumnDefinition Width="80"/>
+								<ColumnDefinition Width="90"/>
+								<ColumnDefinition Width="10"/>
+								<ColumnDefinition Width="80"/>
+								<ColumnDefinition Width="50"/>
+								<ColumnDefinition Width="10"/>
+								<ColumnDefinition Width="*"/>
+								<ColumnDefinition Width="30"/>
+							</Grid.ColumnDefinitions>
+							<!--<Border Grid.Row="0" Grid.RowSpan="4" Grid.Column="0" Background="CadetBlue">
+								
+							</Border>-->
+							<TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding .}"/>
+							<Label Grid.Row="0" Grid.Column="1" VerticalAlignment="Center">Location Type:</Label>
+							<ComboBox Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" ItemsSource="{Binding LocationType}"/>
+							<Label Grid.Row="2" Grid.Column="1" VerticalAlignment="Center">Pre-Delay(sec):</Label>
+							<TextBox Grid.Row="2" Grid.Column="2" VerticalAlignment="Center"/>
+							<Label Grid.Row="3" Grid.Column="1" VerticalAlignment="Center">Post-Delay(sec):</Label>
+							<TextBox Grid.Row="3" Grid.Column="2" VerticalAlignment="Center"/>
+						</Grid>
+					</Border>
 				</ControlTemplate>
 			</Setter.Value>
 		</Setter>

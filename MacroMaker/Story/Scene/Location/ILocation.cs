@@ -10,5 +10,8 @@ namespace MacroMaker
     {
         int X { get; set; }
         int Y { get; set; }
+
+		int getX();
+		int getY();
     }
 }

@@ -84,10 +84,10 @@
                         </Grid>
                         <Grid Grid.Row="1" Margin="6">
                             <ScrollViewer>
-                                <ListBox ItemsSource="{Binding Story.Scenes}">
+                                <ListBox ItemsSource="{Binding Story.Scenes}" HorizontalContentAlignment="Stretch">
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
-                                            <macro:SceneControl DataContext="{Binding}" />
+                                            <macro:SceneControl />
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>
                                 </ListBox>

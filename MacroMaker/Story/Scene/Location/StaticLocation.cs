@@ -10,5 +10,15 @@ namespace MacroMaker
     {
         public int X { get; set; }
         public int Y { get; set; }
-    }
+
+		public int getX()
+		{
+			return X;
+		}
+
+		public int getY()
+		{
+			return Y;
+		}
+	}
 }

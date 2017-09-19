@@ -10,7 +10,35 @@ namespace MacroMaker
     public class CenterImageLocation : ImageLocation
     {
         public string ImageFile { get; set; }
-        public int X { get; set; }
-        public int Y { get; set; }
-    }
+
+		private int _x;
+        public int X
+		{
+			get { return _x; }
+			set { _x = value; }
+		}
+
+		private int _y;
+        public int Y
+		{
+			get { return _y; }
+			set { _y = value; }
+		}
+
+		private int _xoffset;
+		public int XOffset { get; set; }
+
+		private int _yoffset;
+		public int YOffset { get; set; }
+
+		public int getX()
+		{
+			return X + XOffset;
+		}
+
+		public int getY()
+		{
+			return Y + YOffset;
+		}
+	}
 }

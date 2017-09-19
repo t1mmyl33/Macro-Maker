@@ -18,23 +18,47 @@ namespace MacroMaker
             
         // Randomizes location by -5 / +5 pixels
 
-        private int x;
+        private int _x;
         public int X
         {
-            get { return x + random.Next(-5, 6);  }
-            set { x = value; }
+            get { return _x;  }
+            set { _x = value; }
         }
 
-        private int y;
+        private int _y;
         public int Y
         {
-            get { return y + random.Next(-5, 6); }
-            set { y = value; }
+            get { return _y; }
+            set { _y = value; }
         }
 
-        public RandomImageLocation()
+		private int _xoffset;
+		public int XOffset
+		{
+			get { return _xoffset; }
+			set { _xoffset = value; }
+		}
+
+		private int _yoffset;
+		public int YOffset
+		{
+			get { return _yoffset; }
+			set { _yoffset = value; }
+		}
+
+		public RandomImageLocation()
         {
             random = new Random();
         }
-    }
+
+		public int getX()
+		{
+			return X + XOffset + random.Next(-5, 6);
+		}
+
+		public int getY()
+		{
+			return Y + YOffset + random.Next(-5, 6);
+		}
+	}
 }

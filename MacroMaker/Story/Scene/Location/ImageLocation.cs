@@ -10,5 +10,7 @@ namespace MacroMaker
     public interface ImageLocation : ILocation
     {
         string ImageFile { get; set; }
+		int XOffset { get; set; }
+		int YOffset { get; set; }
     }
 }
