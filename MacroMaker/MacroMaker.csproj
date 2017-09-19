@@ -96,6 +96,7 @@
     <Compile Include="NotifyPropertyChanged.cs" />
     <Compile Include="Story\IStory.cs" />
     <Compile Include="Story\IStoryViewModel.cs" />
+    <Compile Include="Story\RunStyleConverter.cs" />
     <Compile Include="Story\Scene\IScene.cs" />
     <Compile Include="Story\Scene\Location\CenterImageLocation.cs" />
     <Compile Include="Story\Scene\Location\ILocation.cs" />
@@ -110,6 +111,10 @@
     <Compile Include="Story\StoryControl.cs" />
     <Compile Include="Story\StoryViewModel.cs" />
     <Compile Include="ViewModelInstaller.cs" />
+    <Page Include="Story\Scene\SceneControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Themes\generic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

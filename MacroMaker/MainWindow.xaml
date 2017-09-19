@@ -8,20 +8,19 @@
 
 	<Grid DataContext="{Binding Path=MainViewModel}">
 		<Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Menu Grid.Row="0" Height="20">
-            <MenuItem>
+        <Menu Grid.Row="0" FontSize="14" FontWeight="SemiBold" VerticalAlignment="Center">
+            <MenuItem> 
                 <MenuItem.Header>
                     <TextBlock Width="40" Text="File" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </MenuItem.Header>
-				<MenuItem Header="New"/>
+				<MenuItem Header="New" Command="{Binding New}" CommandParameter="{Binding .}"/>
 				<MenuItem Header="Save"/>
                 <Separator/>
 				<MenuItem Header="Exit" Command="{Binding Exit}" CommandParameter="{Binding ElementName=Main_Window}"/>
@@ -32,9 +31,6 @@
 		</Grid>
         <Grid Grid.Row="2">
 
-        </Grid>
-        <Grid Grid.Row="3">
-            
         </Grid>
     </Grid>
 </Window>

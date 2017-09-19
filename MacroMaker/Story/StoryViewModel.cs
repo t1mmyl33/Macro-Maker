@@ -6,8 +6,28 @@ using System.Threading.Tasks;
 
 namespace MacroMaker
 {
-    public class StoryViewModel : IStoryViewModel
+    public class StoryViewModel : NotifyPropertyChanged, IStoryViewModel
     {
-        public IStory Story { get; set; }
+        private List<string> _styles = new List<string> { "Loop", "Time" };
+        public List<string> Styles
+        {
+            get { return _styles; }
+        }
+
+        private IStory _story;
+        public IStory Story
+        {
+            get { return _story; }
+            set
+            {
+                _story = value;
+                OnPropertyChanged("Story");
+            }
+        }
+
+        public StoryViewModel()
+        {
+            Story = new Story();
+        }
     }
 }

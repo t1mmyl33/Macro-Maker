@@ -9,5 +9,10 @@ namespace MacroMaker
     public class SceneViewModel : ISceneViewModel
     {
         public IScene Scene { get; set; }
+
+        public SceneViewModel()
+        {
+
+        }
     }
 }

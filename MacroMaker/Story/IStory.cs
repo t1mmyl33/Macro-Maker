@@ -8,6 +8,9 @@ namespace MacroMaker
 {
     public interface IStory
     {
+        int Iterations { get; set; }
+        int Duration { get; set; }
+        string RunStyle { get; set; }
         List<IScene> Scenes { get; set; }
     }
 }

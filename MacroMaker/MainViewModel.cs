@@ -11,7 +11,16 @@ namespace MacroMaker
 {
     public class MainViewModel : NotifyPropertyChanged, IMainViewModel
 	{
-        public IStoryViewModel StoryViewModel { get; set; }
+        private IStoryViewModel _storyViewModel;
+        public IStoryViewModel StoryViewModel
+        {
+            get { return _storyViewModel; }
+            set
+            {
+                _storyViewModel = value;
+                OnPropertyChanged("StoryViewModel");
+            }
+        }
 
         public ICommand New { get; set; }
         public ICommand Save { get; set; }
@@ -26,8 +35,12 @@ namespace MacroMaker
 
 		public void ExecuteCreateNewStory(object obj)
 		{
+            if(MessageBox.Show("Do you want to save current story?", "Save Current Story", MessageBoxButton.YesNo, MessageBoxImage.Exclamation) == MessageBoxResult.Yes)
+            {
+
+            }
+
 			StoryViewModel = new StoryViewModel();
-			StoryViewModel.Story = new Story();
 		}
 
 		public void ExecuteSaveCurrentStory(object obj)

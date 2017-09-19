@@ -3,5 +3,6 @@
                     xmlns:local="clr-namespace:MacroMaker">
 	<ResourceDictionary.MergedDictionaries>
 		<ResourceDictionary Source="/MacroMaker;component/Story/StoryControl.xaml" />
+        <ResourceDictionary Source="/MacroMaker;component/Story/Scene/SceneControl.xaml" />
 	</ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
