@@ -92,7 +92,6 @@ C:\Users\timmy.lee\Documents\Macro-Maker\Macro-Maker\MacroMaker\bin\Debug\ko\Sys
 C:\Users\timmy.lee\Documents\Macro-Maker\Macro-Maker\MacroMaker\bin\Debug\ru\System.Windows.Interactivity.resources.dll
 C:\Users\timmy.lee\Documents\Macro-Maker\Macro-Maker\MacroMaker\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 C:\Users\timmy.lee\Documents\Macro-Maker\Macro-Maker\MacroMaker\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
-C:\Users\timmy.lee\Documents\Macro-Maker\Macro-Maker\MacroMaker\obj\Debug\MacroMaker.csprojResolveAssemblyReference.cache
 C:\Users\timmy.lee\Documents\Macro-Maker\Macro-Maker\MacroMaker\obj\Debug\MainWindow.g.cs
 C:\Users\timmy.lee\Documents\Macro-Maker\Macro-Maker\MacroMaker\obj\Debug\App.g.cs
 C:\Users\timmy.lee\Documents\Macro-Maker\Macro-Maker\MacroMaker\obj\Debug\GeneratedInternalTypeHelper.g.cs
@@ -108,3 +107,4 @@ C:\Users\timmy.lee\Documents\Macro-Maker\Macro-Maker\MacroMaker\obj\Debug\MacroM
 C:\Users\timmy.lee\Documents\Macro-Maker\Macro-Maker\MacroMaker\obj\Debug\MacroMaker.csproj.GenerateResource.Cache
 C:\Users\timmy.lee\Documents\Macro-Maker\Macro-Maker\MacroMaker\obj\Debug\MacroMaker.exe
 C:\Users\timmy.lee\Documents\Macro-Maker\Macro-Maker\MacroMaker\obj\Debug\MacroMaker.pdb
+C:\Users\timmy.lee\Documents\Macro-Maker\Macro-Maker\MacroMaker\obj\Debug\MacroMaker.csprojResolveAssemblyReference.cache

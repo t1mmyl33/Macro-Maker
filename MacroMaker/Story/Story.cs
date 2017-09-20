@@ -57,11 +57,18 @@ namespace MacroMaker
             RunStyle = "Loop";
             Scenes = new List<IScene>();
 
-            var scene = new Scene();
-            scene.PreDelay = 5;
-            scene.PostDelay = 10;
+            var scene1 = new Scene();
+            scene1.PreDelay = 5;
+            scene1.PostDelay = 10;
+			scene1.LocationType = "Image(center)";
 
-            Scenes.Add(scene);
+			var scene2 = new Scene();
+			scene2.PreDelay = 15;
+			scene2.PostDelay = 20;
+			scene2.LocationType = "Image(center)";
+
+			Scenes.Add(scene1);
+			Scenes.Add(scene2);
 		}
     }
 }
