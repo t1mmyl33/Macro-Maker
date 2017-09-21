@@ -10,7 +10,6 @@ namespace MacroMaker
     {
         int PreDelay { get; set; }
         int PostDelay { get; set; }
-		string LocationType { get; set; }
         ILocation Location { get; set; }
     }
 }

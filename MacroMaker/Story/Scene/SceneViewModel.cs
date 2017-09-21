@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MacroMaker
 {
-    public class SceneViewModel : NotifyPropertyChanged, ISceneViewModel
+    public class SceneViewModel : ISceneViewModel
     {
 		private static List<string> _locationType = new List<string> { "Static", "Image(center)", "Image(random)" };
 		public List<string> LocationType
@@ -14,20 +14,11 @@ namespace MacroMaker
 			get { return _locationType; }
 		}
 
-		private List<IScene> _scenes;
-        public List<IScene> Scenes
-		{
-			get { return _scenes; }
-			set
-			{
-				_scenes = value;
-				OnPropertyChanged("Scenes");
-			}
-		}
+        public IScene Scene { get; set; }
 
         public SceneViewModel()
         {
-			Scenes = new List<IScene>();
+
         }
     }
 }

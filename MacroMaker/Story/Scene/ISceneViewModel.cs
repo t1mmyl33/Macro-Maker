@@ -8,7 +8,7 @@ namespace MacroMaker
 {
     public interface ISceneViewModel : IViewModel
     {
-        List<IScene> Scenes { get; set; }
+        IScene Scene { get; set; }
 
     }
 }

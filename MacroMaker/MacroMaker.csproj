@@ -106,7 +106,6 @@
     <Compile Include="Story\Scene\Location\StaticLocation.cs" />
     <Compile Include="Story\Scene\Scene.cs" />
     <Compile Include="Story\Scene\SceneControl.cs" />
-    <Compile Include="Story\Scene\SceneIndexConverter.cs" />
     <Compile Include="Story\Scene\SceneViewModel.cs" />
     <Compile Include="Story\Story.cs" />
     <Compile Include="Story\StoryControl.cs" />
