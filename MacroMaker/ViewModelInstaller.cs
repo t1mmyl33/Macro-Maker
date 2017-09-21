@@ -15,7 +15,7 @@ namespace MacroMaker
         {
             container.Register(Component.For<IMainViewModel>().ImplementedBy<MainViewModel>().LifestyleSingleton());
 			container.Register(Component.For<IStoryViewModel>().ImplementedBy<StoryViewModel>().LifestyleSingleton());
-			container.Register(Component.For<ISceneViewModel>().ImplementedBy<SceneViewModel>().LifestyleSingleton());
+            //container.Register(Component.For<ISceneViewModel>().ImplementedBy<SceneViewModel>().LifestyleSingleton());
 		}
     }
 }

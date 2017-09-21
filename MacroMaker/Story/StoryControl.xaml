@@ -6,7 +6,8 @@
 			<Setter.Value>
                 <ControlTemplate TargetType="{x:Type macro:StoryControl}">
                     <ControlTemplate.Resources>
-                        <macro:RunStyleConverter x:Key="runStyleConverter" />
+                        <macro:RunStyleConverter x:Key="runStyleConverter"/>
+                        <macro:SceneIndexConverter x:Key="sceneIndexConverter"/>
                     </ControlTemplate.Resources>
                     <Grid DataContext="{Binding StoryViewModel}">
                         <Grid.RowDefinitions>
@@ -83,7 +84,35 @@
                             </TextBox>
                         </Grid>
                         <Grid Grid.Row="1" Margin="6">
-							<macro:SceneControl SceneViewModel="{Binding SceneViewModel}"/>
+                            <ScrollViewer>
+                                <ItemsControl DataContext="{Binding SceneViewModels}" ItemsSource="{Binding .}" HorizontalContentAlignment="Stretch">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Border Margin="6" BorderBrush="Gray" BorderThickness="1">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="30"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Grid Grid.Column="0" Background="Crimson">
+                                                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" FontWeight="DemiBold">
+                                                            <TextBlock.Text>
+                                                                <MultiBinding Converter="{StaticResource sceneIndexConverter}">
+                                                                    <Binding Path="DataContext" RelativeSource="{RelativeSource FindAncestor, AncestorType=ItemsControl}" />
+                                                                    <Binding Path="."/>
+                                                                </MultiBinding>
+                                                            </TextBlock.Text>
+                                                        </TextBlock>
+                                                    </Grid>
+                                                    <Grid Grid.Column="1">
+                                                        <macro:SceneControl SceneViewModel="{Binding .}"/>
+                                                    </Grid>
+                                                </Grid>
+                                            </Border>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </ScrollViewer>
 						</Grid>
 					</Grid>
 				</ControlTemplate>

@@ -12,8 +12,8 @@ namespace MacroMaker
 	{
 		public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
 		{
-			var scenes = values[0] as List<IScene>;
-			var currentScene = values[1] as IScene;
+			var scenes = values[0] as List<ISceneViewModel>;
+			var currentScene = values[1] as ISceneViewModel;
 			var index = scenes.IndexOf(currentScene);
 			return index.ToString();
 		}

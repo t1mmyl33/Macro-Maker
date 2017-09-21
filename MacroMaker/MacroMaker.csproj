@@ -99,19 +99,35 @@
     <Compile Include="Story\RunStyleConverter.cs" />
     <Compile Include="Story\Scene\IScene.cs" />
     <Compile Include="Story\Scene\Location\CenterImageLocation.cs" />
+    <Compile Include="Story\Scene\Location\CenterImageLocationViewModel.cs" />
     <Compile Include="Story\Scene\Location\ILocation.cs" />
+    <Compile Include="Story\Scene\Location\ILocationViewModel.cs" />
     <Compile Include="Story\Scene\Location\ImageLocation.cs" />
     <Compile Include="Story\Scene\ISceneViewModel.cs" />
     <Compile Include="Story\Scene\Location\RandomImageLocation.cs" />
+    <Compile Include="Story\Scene\Location\RandomImageLocationViewModel.cs" />
     <Compile Include="Story\Scene\Location\StaticLocation.cs" />
+    <Compile Include="Story\Scene\Location\StaticLocationViewModel.cs" />
     <Compile Include="Story\Scene\Scene.cs" />
     <Compile Include="Story\Scene\SceneControl.cs" />
-    <Compile Include="Story\Scene\SceneIndexConverter.cs" />
+    <Compile Include="Story\SceneIndexConverter.cs" />
     <Compile Include="Story\Scene\SceneViewModel.cs" />
     <Compile Include="Story\Story.cs" />
     <Compile Include="Story\StoryControl.cs" />
     <Compile Include="Story\StoryViewModel.cs" />
     <Compile Include="ViewModelInstaller.cs" />
+    <Page Include="Story\Scene\Location\CenterImageLocationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Story\Scene\Location\RandomImageLocationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Story\Scene\Location\StaticLocationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Story\Scene\SceneControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

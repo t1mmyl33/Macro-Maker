@@ -6,65 +6,40 @@ using System.Threading.Tasks;
 
 namespace MacroMaker
 {
-    public class Scene : NotifyPropertyChanged, IScene
+    public class Scene : IScene
     {
 		private int _preDelay;
         public int PreDelay
 		{
 			get { return _preDelay; }
-			set
-			{
-				_preDelay = value;
-				OnPropertyChanged("PreDelay");
-			}
+            set { _preDelay = value; }
 		}
 
 		private int _postDelay;
         public int PostDelay
 		{
 			get { return _postDelay; }
-			set
-			{
-				_postDelay = value;
-				OnPropertyChanged("PostDelay");
-			}
+            set { _postDelay = value; }
 		}
 
 		private string _locationType;
 		public string LocationType
 		{
 			get { return _locationType; }
-			set
-			{
-				if (_locationType != value)
-				{
-					if (value == "Static")
-						Location = new StaticLocation();
-					else if (value == "Image(center)")
-						Location = new CenterImageLocation();
-					else if (value == "Image(random)")
-						Location = new RandomImageLocation();
-					_locationType = value;
-					OnPropertyChanged("LocationType");
-				}
-			}
+            set { _locationType = value; }
 		}
 
 		private ILocation _location;
         public ILocation Location
 		{
 			get { return _location; }
-			set
-			{
-				_location = value;
-				OnPropertyChanged("Location");
-			}
+            set { _location = value; }
 		}
 
 		public Scene()
 		{
-			LocationType = "Static";
-			Location = new StaticLocation();
+            LocationType = "Image(center)";
+			Location = new CenterImageLocation();
 		}
     }
 }
