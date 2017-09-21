@@ -25,9 +25,23 @@ namespace MacroMaker
             }
         }
 
+		private ISceneViewModel _sceneViewModel;
+		public ISceneViewModel SceneViewModel
+		{
+			get { return _sceneViewModel; }
+			set
+			{
+				_sceneViewModel = value;
+				OnPropertyChanged("SceneViewModel");
+			}
+		}
+
         public StoryViewModel()
         {
             Story = new Story();
+
+			SceneViewModel = IoC.Resolve<ISceneViewModel>();
+			SceneViewModel.Scenes = Story.Scenes;
         }
     }
 }

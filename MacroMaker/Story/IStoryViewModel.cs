@@ -8,6 +8,8 @@ namespace MacroMaker
 {
     public interface IStoryViewModel : IViewModel
     {
+		ISceneViewModel SceneViewModel { get; set; }
+
         IStory Story { get; set; }
     }
 }

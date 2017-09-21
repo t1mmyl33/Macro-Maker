@@ -17,5 +17,9 @@ namespace MacroMaker
             get { return (ISceneViewModel)GetValue(SceneViewModelProperty); }
             set { SetValue(SceneViewModelProperty, value); }
         }
+
+		public SceneControl()
+		{
+		}
     }
 }
