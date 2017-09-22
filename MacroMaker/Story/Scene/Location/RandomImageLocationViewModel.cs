@@ -1,8 +1,12 @@
-﻿using System;
+﻿using Microsoft.Practices.Prism.Commands;
+using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace MacroMaker
 {
@@ -58,5 +62,31 @@ namespace MacroMaker
                 OnPropertyChanged("YOffset");
             }
         }
-    }
+
+		public string ImageFile
+		{
+			get { return Path.GetFileName(((RandomImageLocation)Location).ImageFile); }
+			set
+			{
+				((RandomImageLocation)Location).ImageFile = value;
+				OnPropertyChanged("ImageFile");
+			}
+		}
+		public ICommand BrowseForImage { get; set; }
+
+		public RandomImageLocationViewModel()
+		{
+			BrowseForImage = new DelegateCommand<object>(ExecuteBrowseForImage);
+		}
+
+		private void ExecuteBrowseForImage(object obj)
+		{
+			var dlg = new OpenFileDialog();
+			if (dlg.ShowDialog() == true)
+			{
+				ImageFile = dlg.FileName;
+			}
+		}
+
+	}
 }

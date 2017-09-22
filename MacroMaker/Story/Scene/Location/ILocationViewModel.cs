@@ -9,5 +9,7 @@ namespace MacroMaker
     public interface ILocationViewModel : IViewModel
     {
         ILocation Location { get; set; }
+		int X { get; set; }
+		int Y { get; set; }
     }
 }

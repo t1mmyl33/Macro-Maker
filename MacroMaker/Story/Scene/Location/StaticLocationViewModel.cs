@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Microsoft.Practices.Prism.Commands;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace MacroMaker
 {
@@ -38,5 +40,22 @@ namespace MacroMaker
                 OnPropertyChanged("Y");
             }
         }
+
+		public int XPointer { get; set; }
+		public int YPointer { get; set; }
+
+		public ICommand ShowCoordinateScreenWindow { get; set; }
+
+		public StaticLocationViewModel()
+		{
+			ShowCoordinateScreenWindow = new DelegateCommand<object>(ExecuteShowCoordinateScreenWindow);
+		}
+
+		private void ExecuteShowCoordinateScreenWindow(object obj)
+		{
+			var coordinateScreen = new CoordinateScreenWindow();
+			coordinateScreen.CoordinateScreenViewModel.LocationViewModel = this;
+			coordinateScreen.Show();
+		}
     }
 }

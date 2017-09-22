@@ -4,21 +4,29 @@
     <DataTemplate DataType="{x:Type macro:StaticLocationViewModel}">
         <Grid DataContext="{Binding .}">
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
+				<RowDefinition Height="12"/>
+                <RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="12"/>
+			</Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="80"/>
-                <ColumnDefinition Width="80"/>
+				<ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="40"/>
                 <ColumnDefinition Width="10"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="40"/>
+				<ColumnDefinition Width="10"/>
+				<ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">X-position:</Label>
-            <TextBox Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Text="{Binding X}"/>
-            <Label Grid.Row="1" Grid.Column="0" VerticalAlignment="Center">Y-position:</Label>
-            <TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Y}"/>
-        </Grid>
+            <Label Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" FontSize="14">X-position:</Label>
+			<TextBox Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" MaxLength="4" Text="{Binding X}"/>
+            <Label Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" FontSize="14">Y-position:</Label>
+			<TextBox Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" MaxLength="4" Text="{Binding Y}"/>
+			<TextBlock Grid.Row="1" Grid.Column="4" VerticalAlignment="Center" Text="{Binding XPointer}"/>
+			<TextBlock Grid.Row="2" Grid.Column="4" VerticalAlignment="Center" Text="{Binding YPointer}"/>
+			<Button Grid.Row="1" Grid.RowSpan="2" Grid.Column="6" Margin="10,4" Command="{Binding ShowCoordinateScreenWindow}">
+				Pointer
+			</Button>
+		</Grid>
     </DataTemplate>
 </ResourceDictionary>
