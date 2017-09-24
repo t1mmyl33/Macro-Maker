@@ -21,9 +21,9 @@ namespace MacroMaker
 	{
 		public ICoordinateScreenViewModel CoordinateScreenViewModel { get; set; }
 
-		public double XSize { get; set; } = SystemParameters.PrimaryScreenHeight;
+		public double XSize { get; set; }
 
-		public int YSize { get; set; } = 400;
+		public int YSize { get; set; }
 
 		public CoordinateScreenWindow()
 		{

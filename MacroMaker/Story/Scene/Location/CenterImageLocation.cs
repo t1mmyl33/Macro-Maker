@@ -24,5 +24,10 @@ namespace MacroMaker
 		{
 			return Y + YOffset;
 		}
+
+        public CenterImageLocation()
+        {
+            ImageFile = "";
+        }
 	}
 }

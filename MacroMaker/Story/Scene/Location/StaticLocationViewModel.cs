@@ -41,9 +41,6 @@ namespace MacroMaker
             }
         }
 
-		public int XPointer { get; set; }
-		public int YPointer { get; set; }
-
 		public ICommand ShowCoordinateScreenWindow { get; set; }
 
 		public StaticLocationViewModel()

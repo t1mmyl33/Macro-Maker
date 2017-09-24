@@ -10,12 +10,12 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="70"/>
                 <ColumnDefinition Width="40"/>
-                <ColumnDefinition Width="10"/>
-				<ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="5"/>
+				<ColumnDefinition Width="60"/>
 				<ColumnDefinition Width="40"/>
-				<ColumnDefinition Width="10"/>
+				<ColumnDefinition Width="5"/>
 				<ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">X-position:</Label>
@@ -33,8 +33,13 @@
 				</TextBox.InputBindings>
 			</TextBox>
 			<GroupBox Grid.Row="0" Grid.RowSpan="4" Grid.Column="6" Margin="5" Header="Image:" BorderThickness="0">
-				
-			</GroupBox>
+                <Image>
+                    <Image.Source>
+                        <BitmapImage UriSource="{Binding Temp}"/>
+                    </Image.Source>
+                </Image>
+                <!--<TextBlock Text="{Binding ImageFile}"/>-->
+            </GroupBox>
 		</Grid>
     </DataTemplate>
 </ResourceDictionary>

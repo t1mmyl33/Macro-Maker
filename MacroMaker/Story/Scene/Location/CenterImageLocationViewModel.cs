@@ -65,10 +65,12 @@ namespace MacroMaker
 
 		public string ImageFile
 		{
-			get { return Path.GetFileName(((CenterImageLocation)Location).ImageFile); }
+            //get { return Path.GetFileName(((CenterImageLocation)Location).ImageFile); }
+            get { return ((CenterImageLocation)Location).ImageFile; }
 			set
 			{
 				((CenterImageLocation)Location).ImageFile = value;
+                Temp = @"C:\Users\Timmy\Desktop\BackUp to Reformatted\Photos\Picture Folder\misc\84256.jpg";
 				OnPropertyChanged("ImageFile");
 			}
 		}
@@ -78,6 +80,8 @@ namespace MacroMaker
 		public CenterImageLocationViewModel()
 		{
 			BrowseForImage = new DelegateCommand<object>(ExecuteBrowseForImage);
+
+            Temp = "";
 		}
 
 		private void ExecuteBrowseForImage(object obj)
@@ -88,5 +92,16 @@ namespace MacroMaker
 				ImageFile = dlg.FileName;
 			}
 		}
+
+        private string _temp;
+        public string Temp
+        {
+            get { return _temp; }
+            set
+            {
+                _temp = value;
+                OnPropertyChanged("Temp");
+            }
+        }
     }
 }

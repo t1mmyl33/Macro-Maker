@@ -49,6 +49,7 @@ namespace MacroMaker
 		public RandomImageLocation()
         {
             random = new Random();
+            ImageFile = "";
         }
 
 		public int getX()
