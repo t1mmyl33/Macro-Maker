@@ -14,6 +14,13 @@ namespace MacroMaker
         public int Y { get; set; }
         public int XOffset { get; set; }
 		public int YOffset { get; set; }
+		public bool ContinuousSearch { get; set; }
+
+		public CenterImageLocation()
+        {
+            ImageFile = "";
+			ContinuousSearch = false;
+        }
 
 		public int getX()
 		{
@@ -24,10 +31,5 @@ namespace MacroMaker
 		{
 			return Y + YOffset;
 		}
-
-        public CenterImageLocation()
-        {
-            ImageFile = "";
-        }
 	}
 }

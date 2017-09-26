@@ -63,15 +63,36 @@ namespace MacroMaker
             }
         }
 
+		public bool ContinuousSearch
+		{
+			get { return ((RandomImageLocation)Location).ContinuousSearch; }
+			set
+			{
+				((RandomImageLocation)Location).ContinuousSearch = value;
+				OnPropertyChanged("ContinuousSearch");
+			}
+		}
+
 		public string ImageFile
 		{
-			get { return Path.GetFileName(((RandomImageLocation)Location).ImageFile); }
+			get { return ((RandomImageLocation)Location).ImageFile; }
 			set
 			{
 				((RandomImageLocation)Location).ImageFile = value;
 				OnPropertyChanged("ImageFile");
+				OnPropertyChanged("ImageFileName");
 			}
 		}
+		public string ImageFileName
+		{
+			get
+			{
+				if (ImageFile == null)
+					return "";
+				return Path.GetFileName(((RandomImageLocation)Location).ImageFile);
+			}
+		}
+
 		public ICommand BrowseForImage { get; set; }
 
 		public RandomImageLocationViewModel()

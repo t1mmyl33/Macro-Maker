@@ -6,7 +6,6 @@
         <ResourceDictionary Source="/MacroMaker;component/Story/Scene/SceneControl.xaml" />
         <ResourceDictionary Source="/MacroMaker;component/Story/Scene/Location/CenterImageLocationView.xaml" />
         <ResourceDictionary Source="/MacroMaker;component/Story/Scene/Location/RandomImageLocationView.xaml" />
-        <ResourceDictionary Source="/MacroMaker;component/Story/Scene/Location/StaticLocationView.xaml" />
-		<!--<ResourceDictionary Source="/MacroMaker;component/Story/Scene/Location/CoordinateScreenWindow.xaml" />-->
+		<ResourceDictionary Source="/MacroMaker;component/Story/Scene/Location/StaticLocationView.xaml" />
 	</ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

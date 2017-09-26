@@ -27,12 +27,21 @@
             <Label Grid.Row="1" Grid.Column="3" VerticalAlignment="Center">Y-offset:</Label>
 			<TextBox Grid.Row="1" Grid.Column="4" VerticalAlignment="Center" MaxLength="4" Text="{Binding YOffset}"/>
 			<Label Grid.Row="2" Grid.Column="0" VerticalAlignment="Center">Image File:</Label>
-			<TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" VerticalAlignment="Center" Text="{Binding ImageFile}" IsReadOnly="True">
+			<TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" VerticalAlignment="Center" Text="{Binding ImageFileName, Mode=OneWay}" IsReadOnly="True">
 				<TextBox.InputBindings>
 					<MouseBinding Command="{Binding BrowseForImage}" MouseAction="LeftClick"/>
 				</TextBox.InputBindings>
 			</TextBox>
-            <Image Grid.Row="0" Grid.RowSpan="4" Grid.Column="6" Margin="5" Source="{Binding ImageFile}"/>
+			<Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="7">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="95"/>
+					<ColumnDefinition Width="30"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				<Label Grid.Column="0" VerticalAlignment="Center">Continuous Search:</Label>
+				<CheckBox Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" IsChecked="{Binding ContinuousSearch}"/>
+			</Grid>
+			<Image Grid.Row="0" Grid.RowSpan="4" Grid.Column="6" Margin="5" Source="{Binding ImageFile}"/>
         </Grid>
     </DataTemplate>
 </ResourceDictionary>

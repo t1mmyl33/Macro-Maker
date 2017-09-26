@@ -6,32 +6,37 @@
 			<Setter.Value>
                 <ControlTemplate TargetType="{x:Type macro:StoryControl}">
                     <ControlTemplate.Resources>
-                        <macro:RunStyleConverter x:Key="runStyleConverter"/>
-                        <macro:SceneIndexConverter x:Key="sceneIndexConverter"/>
-                    </ControlTemplate.Resources>
-                    <Grid DataContext="{Binding StoryViewModel}">
+						<macro:RunStyleConverter x:Key="runStyleConverter"/>
+					</ControlTemplate.Resources>
+                    <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="40"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Grid Grid.Row="0" Margin="6">
                             <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="60"/>
                                 <ColumnDefinition Width="70"/>
-                                <ColumnDefinition/>
                                 <ColumnDefinition Width="10"/>
-                                <ColumnDefinition Width="90"/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="60"/>
+								<ColumnDefinition Width="30"/>
+								<ColumnDefinition Width="40"/>
+								<ColumnDefinition Width="40"/>
+								<ColumnDefinition Width="30"/>
+								<ColumnDefinition Width="80"/>
+								<ColumnDefinition Width="40"/>
+							</Grid.ColumnDefinitions>
                             <Label Grid.Column="0" VerticalAlignment="Center">Run Style:</Label>
-                            <ComboBox Grid.Column="1" ItemsSource="{Binding Styles}" SelectedItem="{Binding Story.RunStyle}" VerticalContentAlignment="Center" />
+                            <ComboBox Grid.Column="1" ItemsSource="{Binding Styles}" SelectedItem="{Binding RunStyle}" VerticalContentAlignment="Center" />
                             <Label Name="IterationLabel" Grid.Column="3" VerticalAlignment="Center">
                                 <Label.Style>
                                     <Style TargetType="Label">
                                         <Style.Triggers>
-                                            <DataTrigger Binding="{Binding Story.RunStyle}" Value="Loop">
+                                            <DataTrigger Binding="{Binding RunStyle}" Value="Loop">
                                                 <Setter Property="Visibility" Value="Visible"/>
                                             </DataTrigger>
-                                            <DataTrigger Binding="{Binding Story.RunStyle}" Value="Time">
+                                            <DataTrigger Binding="{Binding RunStyle}" Value="Time">
                                                 <Setter Property="Visibility" Value="Hidden"/>
                                             </DataTrigger>
                                         </Style.Triggers>
@@ -43,10 +48,10 @@
                                 <Label.Style>
                                     <Style TargetType="Label">
                                         <Style.Triggers>
-                                            <DataTrigger Binding="{Binding Story.RunStyle}" Value="Loop">
+                                            <DataTrigger Binding="{Binding RunStyle}" Value="Loop">
                                                 <Setter Property="Visibility" Value="Hidden"/>
                                             </DataTrigger>
-                                            <DataTrigger Binding="{Binding Story.RunStyle}" Value="Time">
+                                            <DataTrigger Binding="{Binding RunStyle}" Value="Time">
                                                 <Setter Property="Visibility" Value="Visible"/>
                                             </DataTrigger>
                                         </Style.Triggers>
@@ -54,35 +59,39 @@
                                 </Label.Style>
                                 <Label.Content>Duration(sec):</Label.Content>
                             </Label>
-                            <TextBox Grid.Column="4" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Text="{Binding Story.Iterations}">
+                            <TextBox Grid.Column="4" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" MaxLength="5" Text="{Binding Iterations}">
                                 <TextBox.Style>
                                     <Style TargetType="TextBox">
                                         <Style.Triggers>
-                                            <DataTrigger Binding="{Binding Story.RunStyle}" Value="Loop">
+                                            <DataTrigger Binding="{Binding RunStyle}" Value="Loop">
                                                 <Setter Property="Visibility" Value="Visible"/>
                                             </DataTrigger>
-                                            <DataTrigger Binding="{Binding Story.RunStyle}" Value="Time">
+                                            <DataTrigger Binding="{Binding RunStyle}" Value="Time">
                                                 <Setter Property="Visibility" Value="Hidden"/>
                                             </DataTrigger>
                                         </Style.Triggers>
                                     </Style>
                                 </TextBox.Style>
                             </TextBox>
-                            <TextBox Grid.Column="4" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Text="{Binding Story.Duration}">
+							<TextBox Grid.Column="4" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" MaxLength="5" Text="{Binding Duration}">
                                 <TextBox.Style>
                                     <Style TargetType="TextBox">
                                         <Style.Triggers>
-                                            <DataTrigger Binding="{Binding Story.RunStyle}" Value="Loop">
+                                            <DataTrigger Binding="{Binding RunStyle}" Value="Loop">
                                                 <Setter Property="Visibility" Value="Hidden"/>
                                             </DataTrigger>
-                                            <DataTrigger Binding="{Binding Story.RunStyle}" Value="Time">
+                                            <DataTrigger Binding="{Binding RunStyle}" Value="Time">
                                                 <Setter Property="Visibility" Value="Visible"/>
                                             </DataTrigger>
                                         </Style.Triggers>
                                     </Style>
                                 </TextBox.Style>
                             </TextBox>
-                        </Grid>
+							<Button Grid.Column="6" Command="{Binding AddScene}" Width="30" VerticalAlignment="Center" HorizontalAlignment="Center">+</Button>
+							<Button Grid.Column="7" Command="{Binding PlayStory}" Width="30" VerticalAlignment="Center" HorizontalAlignment="Center">[></Button>
+							<Label Grid.Column="9" VerticalAlignment="Center">Current Scene:</Label>
+							<TextBlock Grid.Column="10" VerticalAlignment="Center" Text="{Binding CurrentScene}"/>
+						</Grid>
                         <Grid Grid.Row="1" Margin="6">
                             <ScrollViewer>
                                 <ItemsControl DataContext="{Binding SceneViewModels}" ItemsSource="{Binding .}" HorizontalContentAlignment="Stretch">
@@ -95,21 +104,30 @@
                                                         <ColumnDefinition Width="*"/>
 														<ColumnDefinition Width="30"/>
 													</Grid.ColumnDefinitions>
-                                                    <Grid Grid.Column="0" Background="Crimson">
-                                                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" FontWeight="DemiBold">
-                                                            <TextBlock.Text>
-                                                                <MultiBinding Converter="{StaticResource sceneIndexConverter}">
-                                                                    <Binding Path="DataContext" RelativeSource="{RelativeSource FindAncestor, AncestorType=ItemsControl}" />
-                                                                    <Binding Path="."/>
-                                                                </MultiBinding>
-                                                            </TextBlock.Text>
-                                                        </TextBlock>
-                                                    </Grid>
+													<Grid Grid.Column="0" Background="Crimson">
+														<TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" FontWeight="DemiBold" Text="{Binding Index}"/>
+													</Grid>
                                                     <Grid Grid.Column="1">
-                                                        <macro:SceneControl SceneViewModel="{Binding .}"/>
+                                                        <macro:SceneControl DataContext="{Binding .}"/>
                                                     </Grid>
 													<Grid Grid.Column="2" Background="Gainsboro">
-														
+														<StackPanel Orientation="Vertical">
+															<Button VerticalAlignment="Center"
+																	HorizontalAlignment="Center"
+																	Width="20" Margin="4"
+																	Command="{Binding DataContext.DeleteScene, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type macro:StoryControl}}}"
+																	CommandParameter="{Binding .}">X</Button>
+															<Button VerticalAlignment="Center"
+																	HorizontalAlignment="Center"
+																	Width="20" Margin="4"
+																	Command="{Binding DataContext.MoveSceneUp, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type macro:StoryControl}}}"
+																	CommandParameter="{Binding .}">^</Button>
+															<Button VerticalAlignment="Center"
+																	HorizontalAlignment="Center"
+																	Width="20" Margin="4"
+																	Command="{Binding DataContext.MoveSceneDown, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type macro:StoryControl}}}"
+																	CommandParameter="{Binding .}">v</Button>
+														</StackPanel>
 													</Grid>
                                                 </Grid>
                                             </Border>

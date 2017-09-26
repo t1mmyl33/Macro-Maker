@@ -98,6 +98,11 @@
     <Compile Include="IViewModel.cs" />
     <Compile Include="MainViewModel.cs" />
     <Compile Include="NotifyPropertyChanged.cs" />
+    <Compile Include="Play\PlayViewModel.cs" />
+    <Compile Include="Play\PlayWindow.xaml.cs">
+      <DependentUpon>PlayWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Play\IPlayViewModel.cs" />
     <Compile Include="Story\IStory.cs" />
     <Compile Include="Story\IStoryViewModel.cs" />
     <Compile Include="Story\RunStyleConverter.cs" />
@@ -119,12 +124,15 @@
     <Compile Include="Story\Scene\Location\StaticLocationViewModel.cs" />
     <Compile Include="Story\Scene\Scene.cs" />
     <Compile Include="Story\Scene\SceneControl.cs" />
-    <Compile Include="Story\SceneIndexConverter.cs" />
     <Compile Include="Story\Scene\SceneViewModel.cs" />
     <Compile Include="Story\Story.cs" />
     <Compile Include="Story\StoryControl.cs" />
     <Compile Include="Story\StoryViewModel.cs" />
     <Compile Include="ViewModelInstaller.cs" />
+    <Page Include="Play\PlayWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Story\Scene\Location\CenterImageLocationView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -8,13 +8,9 @@ namespace MacroMaker
 {
     public interface ISceneViewModel : IViewModel
     {
+		int Index { get; set; }
         IStoryViewModel StoryViewModel { get; set; }
-
         ILocationViewModel LocationViewModel { get; set; }
-
-        //List<IScene> Scenes { get; set; }
-
         IScene Scene { get; set; }
-
     }
 }

@@ -14,6 +14,17 @@ namespace MacroMaker
 			get { return _locationTypes; }
 		}
 
+		private int _index;
+		public int Index
+		{
+			get { return _index; }
+			set
+			{
+				_index = value;
+				OnPropertyChanged("Index");
+			}
+		}
+
         public IStoryViewModel StoryViewModel { get; set; }
 
         private ILocationViewModel _locationViewModel;

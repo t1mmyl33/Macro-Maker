@@ -12,5 +12,6 @@ namespace MacroMaker
         string ImageFile { get; set; }
 		int XOffset { get; set; }
 		int YOffset { get; set; }
+		bool ContinuousSearch { get; set; }
     }
 }

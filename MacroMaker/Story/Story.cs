@@ -8,7 +8,18 @@ namespace MacroMaker
 {
     public class Story : NotifyPropertyChanged, IStory
     {
-        private int _iterations;
+		private string _runStyle;
+		public string RunStyle
+		{
+			get { return _runStyle; }
+			set
+			{
+				_runStyle = value;
+				OnPropertyChanged("RunStyle");
+			}
+		}
+
+		private int _iterations;
         public int Iterations
         {
             get { return _iterations; }
@@ -19,25 +30,14 @@ namespace MacroMaker
             }
         }
 
-        private int _duration;
-        public int Duration
+        private double _duration;
+        public double Duration
         {
             get { return _duration; }
             set
             {
                 _duration = value;
                 OnPropertyChanged("Duration");
-            }
-        }
-
-        private string _runStyle;
-        public string RunStyle
-        {
-            get { return _runStyle; }
-            set
-            {
-                _runStyle = value;
-                OnPropertyChanged("RunStyle");
             }
         }
 
