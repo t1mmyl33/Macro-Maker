@@ -95,6 +95,7 @@ namespace MacroMaker
 		}
 
 		public ICommand BrowseForImage { get; set; }
+		public ICommand SetCoordinates { get; set; }
 
 		public CenterImageLocationViewModel()
 		{
@@ -108,6 +109,11 @@ namespace MacroMaker
 			{
 				ImageFile = dlg.FileName;
 			}
+		}
+
+		private void ExecuteSetCoordinates(object obj)
+		{
+			var point = 
 		}
     }
 }

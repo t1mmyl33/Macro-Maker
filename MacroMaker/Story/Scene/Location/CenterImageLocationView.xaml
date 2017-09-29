@@ -32,14 +32,15 @@
 					<MouseBinding Command="{Binding BrowseForImage}" MouseAction="LeftClick"/>
 				</TextBox.InputBindings>
 			</TextBox>
-			<Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="7">
+			<Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="6">
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="95"/>
-					<ColumnDefinition Width="30"/>
+					<ColumnDefinition Width="25"/>
 					<ColumnDefinition Width="*"/>
 				</Grid.ColumnDefinitions>
 				<Label Grid.Column="0" VerticalAlignment="Center">Continuous Search:</Label>
 				<CheckBox Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" IsChecked="{Binding ContinuousSearch}"/>
+				<Button Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">Set Coordinates</Button>
 			</Grid>
 			<Image Grid.Row="0" Grid.RowSpan="4" Grid.Column="6" Margin="5" Source="{Binding ImageFile}"/>
         </Grid>

@@ -45,7 +45,8 @@ namespace MacroMaker
             set
             {
                 _scene = value;
-                OnPropertyChanged("Scene");
+				LocationViewModel = new CenterImageLocationViewModel { Location = Scene.Location  };
+				OnPropertyChanged("Scene");
             }
         }
 

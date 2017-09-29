@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -9,6 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media.Imaging;
 
 namespace MacroMaker
 {
@@ -162,6 +165,8 @@ namespace MacroMaker
 			//playWindow.PlayViewModel.Story = Story;
 			//playWindow.Show();
 
+			//Application.Current.MainWindow.WindowState = WindowState.Minimized;
+
 			if (RunStyle == "Loop")
 			{
 				for (int i = 1; i <= Iterations; i++)
@@ -174,6 +179,7 @@ namespace MacroMaker
 						Thread.Sleep(scene.PreDelay * 1000);
 						
 						SetCursorPos(scene.Location.getX(), scene.Location.getY());
+						//mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
 
 						Thread.Sleep(scene.PostDelay * 1000);
 					}
@@ -184,10 +190,19 @@ namespace MacroMaker
 
 			}
 
+			//Application.Current.MainWindow.WindowState = WindowState.Normal;
+
 		}
 
 		[DllImport("user32.dll", EntryPoint = "SetCursorPos")]
 		[return: MarshalAs(UnmanagedType.Bool)]
 		private static extern bool SetCursorPos(int X, int Y);
+
+		[DllImport("user32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
+		public static extern void mouse_event(int dwFlags, int dx, int dy, int cButtons, int dwExtraInfo);
+		private const int MOUSEEVENTF_LEFTDOWN = 0x02;
+		private const int MOUSEEVENTF_LEFTUP = 0x04;
+		private const int MOUSEEVENTF_RIGHTDOWN = 0x08;
+		private const int MOUSEEVENTF_RIGHTUP = 0x10;
 	}
 }
